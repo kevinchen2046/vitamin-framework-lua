@@ -1,3 +1,14 @@
+-------------------------------------
+-------------------------------------
+--- author:陈南
+--- email:kevin-chen@foxmail.com
+--- wechat:kevin_nan
+--- date:2020.7.24
+--- Copyright (c) 2020-present, KevinChen2046 Technology.
+--- All rights reserved.
+-------------------------------------
+-------------------------------------
+
 local Logger = require("src.vitamin.core.logger");
 local uuid = require("uuid");
 -- local __classuuid = 100000;
@@ -75,12 +86,12 @@ Class = {
         __classIdMap[object.__classid__] = object;
         return object;
     end,
-    new = function(object)
+    new = function(object,...)
         local instance=Class.clone(object, {
             __instanceid__ = __GetInstanceId()
         })
         if(instance['constructor']~=nil)then
-            instance:constructor();
+            instance:constructor(...);
         end
         return instance
     end,

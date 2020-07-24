@@ -1,8 +1,20 @@
+-------------------------------------
+-------------------------------------
+--- author:陈南
+--- email:kevin-chen@foxmail.com
+--- wechat:kevin_nan
+--- date:2020.7.24
+--- Copyright (c) 2020-present, KevinChen2046 Technology.
+--- All rights reserved.
+-------------------------------------
+-------------------------------------
+
 -- Vitamin使用注意  --
 -- 1.所有静态方法访问操作符为 .
 -- 2.所有实例方法访问操作符为 : ,这样访问可以传递self
 -- 3.所有实例属性访问操作符仍为 .
 -- 4.定义Class时,className为必须项
+
 require('src.vitamin.core.class');
 require('src.vitamin.core.array');
 require('src.vitamin.core.event');
@@ -120,7 +132,7 @@ Vitamin = {
                 end
             end
         end
-        Logger.line('Vitamin Start...');
+        Logger.line('>>Vitamin Start>>');
     end
 }
 
