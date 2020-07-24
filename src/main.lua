@@ -14,6 +14,7 @@ array:push('c','d','e','f','a1','b1','c1','d1','e1','f1');
 local s=array:splice(1,6);
 Logger.log(array:toString());
 Logger.log(s:toString());
+
 Class.extend(Vitamin.ModelBase, {
     className="ModelLogin",
     data=1045,
@@ -43,5 +44,5 @@ ViewLogin:enter();
 
 ViewLogin:on('INIT',function()Logger.log('INIT!')end);
 ViewLogin:emit('INIT');
--- object.aa();
+
 
