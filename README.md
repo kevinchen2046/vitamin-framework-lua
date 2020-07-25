@@ -1,6 +1,8 @@
 # vitamin-framework-lua
 vitamin 框架 lua版本
 
+> 维他命框架是建立在依赖注入思想上的轻型MVC框架，设计初衷是为了提高代码的可读性及提高开发效率。
+
 ## 模块说明
 
 ### class
