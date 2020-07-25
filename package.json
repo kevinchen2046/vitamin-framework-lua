@@ -1,0 +1,20 @@
+{
+  "name": "vitamin-framework-lua",
+  "version": "1.0.0",
+  "description": "vitamin 框架 lua版本",
+  "main": "index.js",
+  "scripts": {
+    "start": "lua src/main.lua"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinchen2046/vitamin-framework-lua.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinchen2046/vitamin-framework-lua/issues"
+  },
+  "homepage": "https://github.com/kevinchen2046/vitamin-framework-lua#readme"
+}

@@ -17,6 +17,10 @@ EventEmiter = Class.define({
     constructor = function(self)
         self._map = {};
     end,
+    -- 监听事件
+    -- type 事件类型
+    -- listener 事件回调
+    -- priority 事件优先级
     on = function(self, type, listener, priority)
         if (priority == nil) then
             priority = 0;
@@ -25,12 +29,14 @@ EventEmiter = Class.define({
             self._map[type] = Class.new(Array);
         end
         local list = self._map[type];
-        list:find()
-        self._map[type]:push({
-            method = listener,
-            priority = priority
-        });
+        if(list:indexOf(listener)<=0)then
+            list:push({
+                method = listener,
+                priority = priority
+            });
+        end
     end,
+    -- 取消事件
     off = function(self, type, listener)
         local list = self._map[type];
         if (list and list.length) then
@@ -44,17 +50,13 @@ EventEmiter = Class.define({
             end
         end
     end,
+    -- 发送事件
     emit = function(self, type, ...)
         local list = self._map[type];
         if (list and list.length) then
             list:sort(function(a, b)
-                if (a.priority > b.priority) then
-                    return 1;
-                else
-                    return -1;
-                end
+                return (a.priority > b.priority)
             end);
-
             for i = 1, list.length do
                 local object = list:get(i)
                 object.method(...);

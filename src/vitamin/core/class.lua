@@ -73,6 +73,7 @@ Class = {
 
         return ret
     end,
+    -- 定义一个类
     define = function(object)
         -- print(debug.getinfo(object).name);
         if (object.className == nil) then
@@ -86,6 +87,7 @@ Class = {
         __classIdMap[object.__classid__] = object;
         return object;
     end,
+    -- 从类定义实例化
     new = function(object,...)
         local instance=Class.clone(object, {
             __instanceid__ = __GetInstanceId()
@@ -95,6 +97,7 @@ Class = {
         end
         return instance
     end,
+    -- 从类定义取单例
     instance = function(nameOrObject)
         if (type(nameOrObject) == "string") then
             return __classNameMap[nameOrObject];
@@ -104,6 +107,9 @@ Class = {
         end
         return __classIdMap[nameOrObject.__classid__];
     end,
+    -- 继承
+    -- base 基类
+    -- object 当前类实现
     extend = function(base, object)
         if (object.className == nil) then
             Logger.error("[class.extend] className can't be nil!");
@@ -116,9 +122,11 @@ Class = {
         object.__base = base;
         return Class.clone(base, object);
     end,
+    -- 用限定名称反射出类定义
     getDefineByName = function(name)
         return __classNameMap[name];
     end,
+    -- 取得该类的限定名称
     getQualifiedClassName = function(class)
         if (class.__classid__ == nil) then
             Logger.error("[class.getQualifiedClassName] __classid__ can't be nil,may be not a class!");
@@ -126,6 +134,7 @@ Class = {
         end
         return __classIdMap[class.__classid__];
     end,
+    -- 取得该类基类的限定名称
     getQualifiedSuperclassName = function(class)
         if (class.__classid__ == nil) then
             Logger.error("[class.getQualifiedSuperclassName] __classid__ can't be nil,may be not a class!");
