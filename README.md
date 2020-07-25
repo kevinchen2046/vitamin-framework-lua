@@ -9,24 +9,24 @@ vitamin 框架 lua版本
 实现了OOP语法的部分功能
 ```lua
 Class -- OOP实现
-    ++ -- 定义一个类
-    ++ define(object)
-    ++ 
-    ++ -- 从类定义实例化
-    ++ new(object,...)
-    ++ 
-    ++ -- 从类定义取单例
-    ++ instance(nameOrObject)
-    ++ -- 继承
-    ++ -- base 基类
-    ++ -- object 当前类实现
-    ++ extend(base, object)
-    ++ -- 用限定名称反射出类定义
-    ++ getDefineByName(name)
-    ++ -- 取得该类的限定名称
-    ++ getQualifiedClassName(class)
-    ++ -- 取得该类基类的限定名称
-    ++ getQualifiedSuperclassName(class)
+    + -- 定义一个类
+    + define(object)
+    + 
+    + -- 从类定义实例化
+    + new(object,...)
+    + 
+    + -- 从类定义取单例
+    + instance(nameOrObject)
+    + -- 继承
+    + -- base 基类
+    + -- object 当前类实现
+    + extend(base, object)
+    + -- 用限定名称反射出类定义
+    + getDefineByName(name)
+    + -- 取得该类的限定名称
+    + getQualifiedClassName(class)
+    + -- 取得该类基类的限定名称
+    + getQualifiedSuperclassName(class)
 ```
 
 而对应的类结构应该看起来像这样
